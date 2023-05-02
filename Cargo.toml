@@ -30,7 +30,7 @@ name = "image"
 path = "./src/lib.rs"
 
 [dependencies]
-bytemuck = { version = "1.7.0", features = ["extern_crate_alloc"] } # includes cast_vec
+bytemuck = { version = "1.7.0", default-features = false, features = ["extern_crate_alloc"] } # includes cast_vec
 byteorder = { version = "1.4.3", default-features = false, optional = true }
 num-rational = { version = "0.4", default-features = false }
 num-traits = {version="0.2.15", default-features = false }
@@ -60,8 +60,8 @@ jpeg = { package = "jpeg-decoder", version = "0.3.0", default-features = false, 
 
 [features]
 # TODO: Add "avif" to this list while preparing for 0.24.0
-default = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "webp", "bmp", "hdr", "dxt", "dds", "farbfeld", "jpeg_rayon", "openexr", "qoi"]
-
+default = []
+all = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "webp", "bmp", "hdr", "dxt", "dds", "farbfeld", "jpeg_rayon", "openexr", "qoi"]
 ico = ["bmp", "png"]
 pnm = []
 tga = []
